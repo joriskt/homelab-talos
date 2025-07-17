@@ -249,7 +249,8 @@ machine:
             #         - kube-system
     # Configures the node labels for the machine.
     nodeLabels:
-        node.kubernetes.io/exclude-from-external-load-balancers: ""
+        # joris: DISABLE THIS as is breaks load balancers on controlplane nodes:
+        # node.kubernetes.io/exclude-from-external-load-balancers: ""
         # # Provides machine specific control plane configuration options.
         # # ControlPlane definition example.
         # controlPlane:

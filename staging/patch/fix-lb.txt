@@ -1,0 +1,1 @@
+talosctl patch mc --nodes 192.168.11.51 -e 192.168.11.51 --talosconfig talosconfig.yaml --path @patch/fix-lb.json
