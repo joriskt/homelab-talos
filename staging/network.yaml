@@ -1,0 +1,21 @@
+# cluster:
+  # etcd:
+  #   advertisedSubnets:
+  #     - 192.168.11.0/24
+
+machine:
+  kubelet:
+    nodeIP:
+      validSubnets:
+        - 192.168.11.0/24
+  network:
+    interfaces:
+      # Internet only interface
+      - interface: ens18
+        dhcp: true
+        routes:
+          - network: 0.0.0.0/0
+            gateway: 192.168.9.1
+      # Storage only interface
+      - interface: ens20
+        dhcp: true

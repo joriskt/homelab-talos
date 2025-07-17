@@ -1,0 +1,13 @@
+machine:
+  network:
+    hostname: control-02
+    interfaces:
+      # Cluster only interface + VIP
+      - interface: ens19
+        addresses:
+          - 192.168.11.52/24
+        routes:
+          - network: 192.168.11.0/24
+            gateway: 192.168.11.1
+        vip:
+          ip: 192.168.11.50
