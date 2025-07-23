@@ -1,0 +1,20 @@
+machine:
+  network:
+    hostname: control-1
+    interfaces:
+      # Cluster only interface + VIP
+      - interface: ens19
+        dhcp: false
+        addresses:
+          - 192.168.12.51/24
+        routes:
+          - network: 192.168.12.0/24
+        vip:
+          ip: 192.168.12.50
+      # Storage only interface
+      - interface: ens20
+        dhcp: false
+        addresses:
+          - 192.168.3.71/24
+        routes:
+          - network: 192.168.3.0/24

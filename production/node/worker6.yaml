@@ -1,0 +1,18 @@
+machine:
+  network:
+    hostname: worker-6
+    interfaces:
+      # Cluster only interface
+      - interface: ens19
+        dhcp: false
+        addresses:
+          - 192.168.12.66/24
+        routes:
+          - network: 192.168.12.0/24
+      # Storage only interface
+      - interface: ens20
+        dhcp: false
+        addresses:
+          - 192.168.3.96/24
+        routes:
+          - network: 192.168.3.0/24
