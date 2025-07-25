@@ -13,3 +13,8 @@ machine:
       # Internet only interface
       - interface: ens18
         dhcp: true
+    # Override DNS servers to use the correct gateway by default
+    nameservers:
+      - 192.168.12.1
+      - 9.9.9.9
+      - 1.1.1.1
