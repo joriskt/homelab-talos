@@ -11,3 +11,6 @@ machine:
             gateway: 192.168.11.1
         vip:
           ip: 192.168.11.50
+  nodeLabels:
+    topology.kubernetes.io/region: eu-west-0
+    topology.kubernetes.io/zone: home
