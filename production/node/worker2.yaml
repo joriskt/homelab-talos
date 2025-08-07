@@ -16,3 +16,6 @@ machine:
           - 192.168.3.92/24
         routes:
           - network: 192.168.3.0/24
+  nodeLabels:
+    topology.kubernetes.io/region: eu-west-0
+    topology.kubernetes.io/zone: home
