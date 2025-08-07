@@ -21,3 +21,4 @@ machine:
   nodeLabels:
     topology.kubernetes.io/region: eu-west-0
     topology.kubernetes.io/zone: home
+    topology.joris.me/node: nuc3
