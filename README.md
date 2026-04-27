@@ -14,7 +14,7 @@ Voordat je TalosOS virtuele- of bare-metal nodes gaat installeren is het **zeer 
 
 Voor clusters heb ik de volgende images:
 
-- `k8s-staging`: Bare-metal, amd64, SecureBoot OFF, extensies: `siderolabs/qemu-guest-agent`.
+- `k8s-staging`: Bare-metal, amd64 + SecureBoot ON, extensies: `siderolabs/qemu-guest-agent`, bootloader: UEFI only.
 - `k8s-production`: Bare-metal, amd64, SecureBoot ON, extensies: `siderolabs/qemu-guest-agent`.
 
 Hier kan je ISOs van downloaden, maar **je moet ook in de machine config de installer image updaten** onder `machine: install: image:`. (Dit was ik bij staging vergeten, dus die hebben nu allemaal geen QEMU guest agent..)
