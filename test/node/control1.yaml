@@ -15,6 +15,10 @@ machine:
           - 192.168.11.51/24
         routes:
           - network: 192.168.11.0/24
+            gateway: 192.168.11.1
+          # DNS moet benaderd worden via het cluster netwerk ivm firewall regels.
+          - network: 192.168.5.0/24
+            gateway: 192.168.11.1
       
       # Storage only interface
       - interface: ens20
@@ -24,9 +28,15 @@ machine:
         routes:
           - network: 192.168.3.0/24
 
+    # Linkt naar Technitium.
     nameservers:
-      - 192.168.5.10
-      - 192.168.9.1
+      - 192.168.5.11
+      - 192.168.5.12
+      - 192.168.5.13
+    
+    # Dit is nodig omdat hij anders de control plane DNS niet kan resolven.
+    searchDomains:
+      - joris.lan
   nodeLabels:
     topology.kubernetes.io/region: eu-west-0
     topology.kubernetes.io/zone: home
